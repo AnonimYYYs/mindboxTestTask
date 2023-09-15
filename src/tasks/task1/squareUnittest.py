@@ -26,3 +26,8 @@ class TestGeometryFunctions(unittest.TestCase):
         with self.assertRaises(ValueError):
             countSquare(1, 2, 3, 4, 5, 6)
 
+    def test_invalid_triangle(self):
+        # Проверяем на ошибку с невалидным треугольником
+        sides = (1, 2, 3)
+        with self.assertRaises(ValueError):
+            _countTriangle(*sides)

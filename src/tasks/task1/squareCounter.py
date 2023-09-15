@@ -18,8 +18,11 @@ def _countTriangle(a, b, c):
     """
     Вычисление по формуле Герона через полупериметр
     """
-    s = (a + b + c) / 2
 
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise ValueError("Треугольник с такими сторонами не существует.")
+
+    s = (a + b + c) / 2
     area = math.sqrt(s * (s - a) * (s - b) * (s - c))
 
     return area
